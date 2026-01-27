@@ -1,4 +1,4 @@
-rootProject.name = "keyple-util-java-lib"
+rootProject.name = "keyple-logging-slf4j-jvm-lib"
 
 pluginManagement {
   repositories {

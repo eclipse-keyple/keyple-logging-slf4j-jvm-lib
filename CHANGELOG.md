@@ -83,17 +83,17 @@ It follows the extraction of Keyple 1.0 components contained in the `eclipse-key
 repositories.
 It also brings many major API changes.
 
-[unreleased]: https://github.com/eclipse-keyple/keyple-util-java-lib/compare/2.4.0...HEAD
-[2.4.0]: https://github.com/eclipse-keyple/keyple-util-java-lib/compare/2.3.1...2.4.0
-[2.3.1]: https://github.com/eclipse-keyple/keyple-util-java-lib/compare/2.3.0...2.3.1
-[2.3.0]: https://github.com/eclipse-keyple/keyple-util-java-lib/compare/2.2.0...2.3.0
-[2.2.0]: https://github.com/eclipse-keyple/keyple-util-java-lib/compare/2.1.0...2.2.0
-[2.1.0]: https://github.com/eclipse-keyple/keyple-util-java-lib/compare/2.0.0...2.1.0
-[2.0.0]: https://github.com/eclipse-keyple/keyple-util-java-lib/releases/tag/2.0.0
+[unreleased]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/compare/2.4.0...HEAD
+[2.4.0]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/compare/2.3.1...2.4.0
+[2.3.1]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/compare/2.3.0...2.3.1
+[2.3.0]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/compare/2.2.0...2.3.0
+[2.2.0]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/compare/2.1.0...2.2.0
+[2.1.0]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/compare/2.0.0...2.1.0
+[2.0.0]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/releases/tag/2.0.0
 
-[#25]: https://github.com/eclipse-keyple/keyple-util-java-lib/issues/25
-[#19]: https://github.com/eclipse-keyple/keyple-util-java-lib/issues/19
-[#17]: https://github.com/eclipse-keyple/keyple-util-java-lib/issues/17
-[#14]: https://github.com/eclipse-keyple/keyple-util-java-lib/issues/14
+[#25]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/issues/25
+[#19]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/issues/19
+[#17]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/issues/17
+[#14]: https://github.com/eclipse-keyple/keyple-logging-slf4j-jvm-lib/issues/14
 
 [eclipse-keyple/keyple#6]: https://github.com/eclipse-keyple/keyple/issues/6

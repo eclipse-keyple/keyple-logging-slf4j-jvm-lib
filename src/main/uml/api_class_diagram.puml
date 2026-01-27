@@ -1,6 +1,6 @@
 @startuml
 title
-    Keyple - keyple-util-java-lib - 2.5.+ (2026-01-20)
+    Keyple - keyple-logging-slf4j-jvm-lib - 2.5.+ (2026-01-20)
 end title
 
 ' == THEME ==
