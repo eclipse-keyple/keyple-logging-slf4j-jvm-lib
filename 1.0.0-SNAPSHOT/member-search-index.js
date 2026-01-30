@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"org.eclipse.keyple.logging.slf4j.internal","c":"Slf4jLoggerProvider","l":"getLogger(String)","u":"getLogger(java.lang.String)"},{"p":"org.eclipse.keyple.logging.slf4j.internal","c":"Slf4jLoggerProvider","l":"Slf4jLoggerProvider()","u":"%3Cinit%3E()"}];updateSearchResults();

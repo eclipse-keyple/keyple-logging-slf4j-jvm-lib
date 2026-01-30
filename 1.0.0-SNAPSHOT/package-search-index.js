@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.eclipse.keyple.logging.slf4j.internal"}];updateSearchResults();

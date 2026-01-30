@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.eclipse.keyple.logging.slf4j.internal","l":"Slf4jLoggerProvider"}];updateSearchResults();
