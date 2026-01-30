@@ -5,19 +5,23 @@
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=eclipse_keyple-logging-slf4j-jvm-lib&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=eclipse_keyple-logging-slf4j-jvm-lib)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=eclipse_keyple-logging-slf4j-jvm-lib&metric=coverage)](https://sonarcloud.io/summary/new_code?id=eclipse_keyple-logging-slf4j-jvm-lib)
 
-# Keyple Util Java Library
+# Keyple Logging Slf4j JVM Library
 
 ## Overview
 
-The **Keyple Util Java Library** contains various utility classes used by all Keyple components.
+The **Keyple Logging Slf4j JVM Library** contains a default bridge between the Keyple Logging abstraction layer defined
+in [Keyple Util Java Lib](https://github.com/eclipse-keyple/keyple-util-java-lib) and
+the [SLF4J](https://www.slf4j.org/) logging framework.
 
 ## Documentation & Contribution Guide
 
-The full documentation, including the **user guide**, **download information** and **contribution guide**, is available on the Keyple website [keyple.org](https://keyple.org).
+The full documentation, including the **user guide**, **download information** and **contribution guide**, is available
+on the Keyple website [keyple.org](https://keyple.org).
 
 ## API documentation
 
-API documentation & class diagram is available online: [docs.keyple.org/keyple-logging-slf4j-jvm-lib](https://docs.keyple.org/keyple-logging-slf4j-jvm-lib)
+API documentation & class diagram is available
+online: [docs.keyple.org/keyple-logging-slf4j-jvm-lib](https://docs.keyple.org/keyple-logging-slf4j-jvm-lib)
 
 ## About the source code
 

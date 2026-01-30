@@ -10,8 +10,8 @@ pluginManagement {
 dependencyResolutionManagement {
   repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
   repositories {
-    mavenLocal()
     mavenCentral()
+    mavenLocal()
     maven(url = "https://central.sonatype.com/repository/maven-snapshots")
   }
 }

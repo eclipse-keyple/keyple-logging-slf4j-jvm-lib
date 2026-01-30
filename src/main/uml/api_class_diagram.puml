@@ -1,6 +1,6 @@
 @startuml
 title
-    Keyple - keyple-logging-slf4j-jvm-lib - 2.5.+ (2026-01-20)
+    Keyple - keyple-logging-slf4j-jvm-lib - 1.7.32 (2026-01-30)
 end title
 
 ' == THEME ==
@@ -54,192 +54,25 @@ hide <<grey>> stereotype
 legend top
     __Colors legend__ :
     * __External API references__ :
-    ** <back:yellow>**com.google.code.gson**</back>
+    ** <back:yellow>**keyple-util-java-lib**</back>
 end legend
 
-package "org.eclipse.keyple.core.util" as util {
-    +class "**final** Assert" as Assert {
-        +{static} Assert getInstance ()
+package "org.eclipse.keyple.logging.slf4j.internal" as api {
+    +class "<< <back:yellow>LoggerProvider</back> >>\n**final** Slf4jLoggerProvider" as Slf4jLoggerProvider {
+        --
+        +Slf4jLoggerProvider ()
 
-        +Assert notNull (Object obj, String name)
-        +Assert notEmpty (String obj, String name)
-        +Assert notEmpty (Collection<?> obj, String name)
-        +Assert notEmpty (byte[] obj, String name)
-        +Assert isTrue (Boolean condition, String name)
-        +Assert greaterOrEqual (Integer number, int minValue, String name)
-        +Assert isEqual (Integer number, int value, String name)
-        +Assert isInRange (Integer number, int minValue, int maxValue, String name)
-        +Assert isHexString (String hex, String name)
-    }
-    +class "**final** ByteArrayUtil" as ByteArrayUtil {
-        +{static} byte[] extractBytes (byte[] src, int bitOffset, int nbBytes)
-        +{static} byte[] extractBytes (long src, int nbBytes)
-
-        +{static} short extractShort (byte[] src, int offset)
-        +{static} int extractInt (byte[] src, int offset, int nbBytes, boolean isSigned)
-        +{static} long extractLong (byte[] src, int offset, int nbBytes, boolean isSigned)
-
-        +{static} void copyBytes (long src, byte[] dest, int offset, int nbBytes)
-
-        +<s>boolean isValidHexString (String hex)
-        +<s>String normalizeHexString (String hex)
-
-        +<s>byte[] fromHex (String hex)
-        +<s>String toHex (byte[] data)
-
-        +<s>int twoBytesToInt (byte[] bytes, int offset)
-        +<s>int twoBytesSignedToInt (byte[] bytes, int offset)
-        +<s>int threeBytesToInt (byte[] bytes, int offset)
-        +<s>int threeBytesSignedToInt (byte[] bytes, int offset)
-        +<s>int fourBytesToInt (byte[] bytes, int offset)
-    }
-    +class "**final** HexUtil" as HexUtil {
-        +{static} boolean isValid (String hex)
-
-        +{static} byte[] toByteArray (String hex)
-        +{static} byte toByte (String hex)
-        +{static} short toShort (String hex)
-        +{static} int toInt (String hex)
-        +{static} long toLong (String hex)
-
-        +{static} String toHex (byte[] tab)
-        +{static} String toHex (byte val)
-        +{static} String toHex (short val)
-        +{static} String toHex (int val)
-        +{static} String toHex (long val)
-    }
-    +class "**final** ApduUtil" as ApduUtil {
-        +{static} byte[] build (byte cla, byte ins, byte p1, byte p2, byte[] dataIn, Byte le)
-
-        +{static} boolean isCase4 (byte[] apduCommand)
-    }
-    +class BerTlvUtil {
-        +{static} Map<Integer, byte[]> parseSimple (byte[] tlvStructure, boolean primitiveOnly)
-        +{static} Map<Integer, List<byte[]>> parse (byte[] tlvStructure, boolean primitiveOnly)
-
-        +{static} boolean isConstructed (int tagId)
-    }
-    package json {
-        +class "**final** JsonUtil" as JsonUtil {
-            +{static} <back:yellow>Gson</back> getParser ()
-            +{static} void registerTypeAdapter (Class<?> matchingClass,
-                \tObject adapter, boolean withSubclasses)
-
-            +{static} String toJson (Object obj)
-        }
-        +class BodyError {
-            +BodyError (Exception exception)
-
-            +String getCode ()
-            +Exception getException ()
-        }
-        +class "<<<back:yellow>JsonDeserializer<BodyError></back>>>\nBodyErrorJsonDeserializer" as BodyErrorJsonDeserializer {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<byte[]></back>>>\n<<<back:yellow>JsonDeserializer<byte[]></back>>>\nByteArrayJsonAdapter" as ByteArrayJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Byte></back>>>\n<<<back:yellow>JsonDeserializer<Byte></back>>>\nByteJsonAdapter" as ByteJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Short></back>>>\n<<<back:yellow>JsonDeserializer<Short></back>>>\nShortJsonAdapter" as ShortJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Integer></back>>>\n<<<back:yellow>JsonDeserializer<Integer></back>>>\nIntegerJsonAdapter" as IntegerJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Long></back>>>\n<<<back:yellow>JsonDeserializer<Long></back>>>\nLongJsonAdapter" as LongJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Throwable></back>>>\nThrowableJsonAdapter" as ThrowableJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Date></back>>>\nDateJsonSerializer" as DateJsonSerializer {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<Calendar></back>>>\n<<<back:yellow>JsonDeserializer<Calendar></back>>>\nCalendarJsonAdapter" as CalendarJsonAdapter {
-            __
-            ...
-        }
-        +class "<<<back:yellow>JsonSerializer<ByteBuffer></back>>>\n<<<back:yellow>JsonDeserializer<ByteBuffer></back>>>\n<color:blue>ByteBufferJsonAdapter" as ByteBufferJsonAdapter {
-            __
-            ...
-        }
-    }
-    package logging {
-        +class "<color:blue>**final** LoggerFactory" as LoggerFactory {
-            +<color:blue>{static} void setProvider (LoggerProvider provider)
-            +<color:blue>{static} Logger getLogger(Class<?> clazz)
-        }
-        +interface "<color:blue>Logger" as Logger {
-            +<color:blue>boolean isTraceEnabled ()
-            +<color:blue>boolean isDebugEnabled ()
-            +<color:blue>boolean isInfoEnabled ()
-            +<color:blue>boolean isWarnEnabled ()
-            +<color:blue>boolean isErrorEnabled ()
-
-            +<color:blue>void trace (String message, Object... args)
-            +<color:blue>void debug (String message, Object... args)
-            +<color:blue>void info (String message, Object... args)
-            +<color:blue>void warn (String message, Object... args)
-            +<color:blue>void error (String message, Object... args)
-
-            +<color:blue>void warn (String message, Throwable throwable, Object... args)
-            +<color:blue>void error (String message, Throwable throwable, Object... args)
-        }
-        package spi {
-            +interface "<color:blue>LoggerProvider" as LoggerProvider {
-                +<color:blue>Logger getLogger (String className)
-            }
-        }
-    }
-    package protocol {
-        +enum "<s>ContactCardCommonProtocol</s>" as ContactCardCommonProtocol {
-            <s>ISO_7816_3
-            <s>ISO_7816_3_TO
-            <s>ISO_7816_3_T1
-            <s>INNOVATRON_HIGH_SPEED_PROTOCOL_SAM
-        }
-        +enum "<s>ContactlessCardCommonProtocol</s>" as ContactlessCardCommonProtocol {
-            <s>ISO_14443_4
-            <s>NFC_A_ISO_14443_3A
-            <s>NFC_B_ISO_14443_3B
-            <s>NFC_F_JIS_6319_4
-            <s>NFC_V_ISO_15693
-            <s>INNOVATRON_B_PRIME_CARD
-        }
+        -- **LoggerProvider** --
+        +<back:yellow>Logger</back> getLogger (String className)
     }
 }
 
 ' Associations
 
-LoggerFactory .right.> LoggerProvider #C_USE : use >
-LoggerFactory ..> Logger #C_LINK : provide >
-
-LoggerProvider ..> Logger #C_LINK : provide >
-
 ' == LAYOUT ==
-
-ByteArrayUtil -[hidden]- JsonUtil
-
-Assert -[hidden]- ByteArrayUtil
-Assert -[hidden]- ApduUtil
-Assert -[hidden]- BerTlvUtil
 
 ' == STYLE ==
 
-package util #C_GREY1 {}
-package util.json #C_GREY2 {}
-package util.protocol #C_GREY2 {}
-package util.logging #C_GREY2 {}
-package util.logging.spi #C_GREY3 {}
+package api #C_GREY1 {}
 
 @enduml

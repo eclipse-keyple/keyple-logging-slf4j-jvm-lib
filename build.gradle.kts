@@ -6,7 +6,7 @@ plugins {
   java
   `maven-publish`
   signing
-  id("com.diffplug.spotless") version "6.25.0"
+  id("com.diffplug.spotless") version "8.2.0"
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -14,13 +14,15 @@ plugins {
 ///////////////////////////////////////////////////////////////////////////////
 
 dependencies {
+  implementation("org.eclipse.keyple:keyple-util-java-lib:2.5.0-SNAPSHOT") { isChanging = true }
   implementation("org.slf4j:slf4j-api:1.7.32")
-  implementation("com.google.code.gson:gson:2.10.1")
-  testImplementation(platform("org.junit:junit-bom:5.10.2"))
+
+  testImplementation("org.slf4j:slf4j-simple:1.7.32")
+  testImplementation(platform("org.junit:junit-bom:5.14.2"))
   testImplementation("org.junit.jupiter:junit-jupiter")
-  testImplementation("org.junit.vintage:junit-vintage-engine")
-  testImplementation("org.assertj:assertj-core:3.25.3")
-  testImplementation("org.mockito:mockito-core:5.11.0")
+  testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+  testImplementation("org.assertj:assertj-core:3.27.7")
+  testImplementation("org.mockito:mockito-core:5.21.0")
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -81,7 +83,8 @@ tasks {
       overview = "src/main/javadoc/overview.html"
       windowTitle = "$titleProperty - ${project.version}"
       header(
-          "<div style=\"margin-top: 7px\">$javadocLogo $titleProperty - ${project.version}</div>")
+          "<div style=\"margin-top: 7px\">$javadocLogo $titleProperty - ${project.version}</div>"
+      )
       docTitle("$titleProperty - ${project.version}")
       use(true)
       bottom(javadocCopyright)
@@ -109,7 +112,9 @@ tasks {
               "Specification-Vendor" to (project.findProperty("organization.name") as String),
               "Created-By" to
                   "${System.getProperty("java.version")} (${System.getProperty("java.vendor")})",
-              "Build-Jdk" to System.getProperty("java.version")))
+              "Build-Jdk" to System.getProperty("java.version"),
+          )
+      )
     }
   }
   named<Jar>("sourcesJar") {
@@ -118,7 +123,9 @@ tasks {
       attributes(
           mapOf(
               "Implementation-Title" to "${project.findProperty("title") as String} Sources",
-              "Implementation-Version" to project.version))
+              "Implementation-Version" to project.version,
+          )
+      )
     }
   }
   named<Jar>("javadocJar") {
@@ -128,7 +135,9 @@ tasks {
       attributes(
           mapOf(
               "Implementation-Title" to "${project.findProperty("title") as String} Documentation",
-              "Implementation-Version" to project.version))
+              "Implementation-Version" to project.version,
+          )
+      )
     }
   }
 }
@@ -171,7 +180,9 @@ publishing {
             mapOf(
                 "project.build.sourceEncoding" to "UTF-8",
                 "maven.compiler.source" to javaSourceLevel,
-                "maven.compiler.target" to javaTargetLevel))
+                "maven.compiler.target" to javaTargetLevel,
+            )
+        )
       }
     }
   }

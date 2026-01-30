@@ -1,6 +1,50 @@
-<html>
+<html lang="en">
 <body>
-<p>This document is the API specification of various utility classes that can be used by all Keyple modules including
-    applications built with them.</p>
+
+<h2>Overview</h2>
+<p>
+    This library provides an SLF4J-based implementation of the Keyple logging API.
+    It allows Keyple components to integrate seamlessly with the Simple Logging Facade for Java (SLF4J),
+    enabling applications to use their preferred logging backend such as Logback, Log4j2, or java.util.logging.
+</p>
+
+<h2>Purpose</h2>
+<p>
+    The Keyple Logging SLF4J library serves as a bridge between the Keyple logging framework and SLF4J.
+    By using this implementation, developers can leverage the flexibility of SLF4J to configure and manage
+    logging across their Keyple-based applications according to their specific requirements and existing
+    logging infrastructure.
+</p>
+
+<h2>Key Features</h2>
+<ul>
+    <li>Seamless integration with SLF4J logging facade</li>
+    <li>Support for all SLF4J-compatible logging backends</li>
+    <li>Consistent logging behavior across Keyple components</li>
+    <li>Easy configuration through standard SLF4J mechanisms</li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    To use this library, simply include it as a dependency in your project along with your chosen SLF4J
+    implementation (e.g., Logback, Log4j2). The Keyple logging framework will automatically detect and
+    use this SLF4J implementation.
+</p>
+
+<h2>Package Structure</h2>
+<p>
+    This library contains a single internal package:
+</p>
+<ul>
+    <li><code>org.eclipse.keyple.logging.slf4j.internal</code> - Internal implementation classes for SLF4J integration</li>
+</ul>
+
+<h2>Important Notes</h2>
+<p>
+    <strong>Internal API:</strong> The classes in this library are internal implementation details and should
+    not be used directly by client applications. They are subject to change without notice. Applications should
+    interact with the Keyple logging framework through the public API provided by the core Keyple logging module.
+</p>
+
 </body>
 </html>
