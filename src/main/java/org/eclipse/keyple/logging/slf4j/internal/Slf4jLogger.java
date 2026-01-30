@@ -24,7 +24,7 @@ import org.eclipse.keyple.core.util.logging.Logger;
  * <p>All methods in this class directly delegate to the corresponding methods in the SLF4J {@link
  * org.slf4j.Logger} instance provided during construction.
  *
- * @since 1.7.32
+ * @since 1.0.0
  */
 final class Slf4jLogger implements Logger {
 
@@ -36,7 +36,7 @@ final class Slf4jLogger implements Logger {
    *
    * @param delegate The SLF4J {@link org.slf4j.Logger} instance to which all logging operations
    *     will be delegated. Must not be null.
-   * @since 1.7.32
+   * @since 1.0.0
    */
   Slf4jLogger(org.slf4j.Logger delegate) {
     this.delegate = delegate;
@@ -45,7 +45,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public boolean isTraceEnabled() {
@@ -55,7 +55,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public boolean isDebugEnabled() {
@@ -65,7 +65,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public boolean isInfoEnabled() {
@@ -75,7 +75,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public boolean isWarnEnabled() {
@@ -85,7 +85,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public boolean isErrorEnabled() {
@@ -95,7 +95,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void trace(String message, Object... args) {
@@ -105,7 +105,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void debug(String message, Object... args) {
@@ -115,7 +115,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void info(String message, Object... args) {
@@ -125,7 +125,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void warn(String message, Object... args) {
@@ -135,7 +135,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void error(String message, Object... args) {
@@ -145,7 +145,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void warn(String message, Throwable throwable, Object... args) {
@@ -155,7 +155,7 @@ final class Slf4jLogger implements Logger {
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public void error(String message, Throwable throwable, Object... args) {

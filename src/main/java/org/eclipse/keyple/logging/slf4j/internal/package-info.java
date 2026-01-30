@@ -8,6 +8,6 @@
  * <p><b>Note:</b> This package is internal and should not be used directly by client applications.
  * Use the public API provided by the Keyple logging module instead.
  *
- * @since 1.7.32
+ * @since 1.0.0
  */
 package org.eclipse.keyple.logging.slf4j.internal;

@@ -24,14 +24,14 @@ import org.eclipse.keyple.core.util.logging.spi.LoggerProvider;
  * utilizing SLF4J for actual logging operations, ensuring compatibility with SLF4J-based logging
  * systems.
  *
- * @since 1.7.32
+ * @since 1.0.0
  */
 public final class Slf4jLoggerProvider implements LoggerProvider {
 
   /**
    * {@inheritDoc}
    *
-   * @since 1.7.32
+   * @since 1.0.0
    */
   @Override
   public Logger getLogger(String className) {
